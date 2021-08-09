@@ -25,7 +25,7 @@ class _CalendarState extends State<Calendar> {
               focusedDay: focusedDay,
               firstDay: DateTime(2021),
               lastDay: DateTime(2023),
-              
+
               // calendarFormat: format,
               // onFormatChanged: (CalendarFormat _format) {
               //   setState(() {
@@ -46,10 +46,18 @@ class _CalendarState extends State<Calendar> {
                   color: Colors.blue,
                   shape: BoxShape.circle,
                 ),
+                weekendTextStyle: TextStyle(color: Colors.orangeAccent),
                 selectedTextStyle: TextStyle(color: Colors.white),
               ),
-              selectedDayPredicate: (DateTime date){
-                    return isSameDay(selectedDay,date);
+              headerStyle: HeaderStyle(
+                formatButtonVisible: false,
+                titleCentered: true,
+                leftChevronPadding: EdgeInsets.fromLTRB(0, 12, 0, 12),
+                rightChevronPadding: EdgeInsets.fromLTRB(0, 12, 0, 12),
+              ),
+
+              selectedDayPredicate: (DateTime date) {
+                return isSameDay(selectedDay, date);
               },
             ),
           ),
