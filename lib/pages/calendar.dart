@@ -10,6 +10,25 @@ class _CalendarState extends State<Calendar> {
   CalendarFormat format = CalendarFormat.month;
   DateTime selectedDay = DateTime.now();
   DateTime focusedDay = DateTime.now();
+  void errorHandler() => {
+        showDialog(
+          context: context,
+          builder: (BuildContext context) => AlertDialog(
+            title: const Text('AlertDialog Title'),
+            content: const Text('AlertDialog description'),
+            actions: <Widget>[
+              TextButton(
+                onPressed: () => Navigator.pop(context, 'Cancel'),
+                child: const Text('Cancel'),
+              ),
+              TextButton(
+                onPressed: () => Navigator.pop(context, 'OK'),
+                child: const Text('OK'),
+              ),
+            ],
+          ),
+        ),
+      };
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -61,8 +80,9 @@ class _CalendarState extends State<Calendar> {
               },
             ),
           ),
-          Container(
-            child: Text('songolt'),
+          TextButton(
+            onPressed: () => errorHandler(),
+            child: Text('alert popup'),
           )
         ],
       ),
