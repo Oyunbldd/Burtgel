@@ -12,6 +12,7 @@ class _AccountState extends State<Account> {
   final IdController data = Get.put(IdController());
   @override
   Widget build(BuildContext context) {
+    print(data.id);
     return Container(
       width: double.infinity,
       child: Column(
