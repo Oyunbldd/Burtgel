@@ -32,6 +32,8 @@ dependencies:
   table_calendar: ^3.0.1
   google_sign_in: ^5.0.7
   http: ^0.13.3
+  get: ^4.3.6
+  dio: ^4.0.0
 
 dev_dependencies:
   flutter_test:

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
+import '../controller/idController.dart';
 
 class Account extends StatefulWidget {
   @override
@@ -7,6 +9,7 @@ class Account extends StatefulWidget {
 }
 
 class _AccountState extends State<Account> {
+  final IdController data = Get.put(IdController());
   @override
   Widget build(BuildContext context) {
     return Container(
