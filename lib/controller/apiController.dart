@@ -6,7 +6,7 @@ import '../controller/idController.dart';
 
 class ApiController extends GetxController {
   var dio = Dio();
-  final IdController idController = Get.put(IdController());
+  final IdController id = Get.put(IdController());
   Future<dynamic> checkUser(data) async => dio.post(
         "http://localhost:8001/api/v1/users/?gmail=${data.email}",
         options: Options(
@@ -18,8 +18,9 @@ class ApiController extends GetxController {
           'photoUrl': data.photoUrl
         },
       ).then((value) => {
-            data = value.data['data'][0]['_id'],
-            idController.increment(data),
-            print(data)
+            data = value.data['data']['_id'],
+            id.increment(data),
           });
+  Future<dynamic> getData() async =>
+      dio.get("http://localhost:8001/api/v1/user/${id.id}");
 }

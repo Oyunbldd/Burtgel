@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 import '../controller/idController.dart';
+import '../controller/apiController.dart';
+import '../controller/googleController.dart';
 
 class Account extends StatefulWidget {
   @override
@@ -10,9 +12,11 @@ class Account extends StatefulWidget {
 
 class _AccountState extends State<Account> {
   final IdController data = Get.put(IdController());
+  final ApiController apiController = Get.put(ApiController());
+  final GoogleController google = Get.put(GoogleController());
   @override
   Widget build(BuildContext context) {
-    print(data.id);
+    apiController.getData().then((value) => print(value.data['data']));
     return Container(
       width: double.infinity,
       child: Column(
@@ -38,6 +42,7 @@ class _AccountState extends State<Account> {
                     borderRadius: BorderRadius.circular(10.0)),
               ),
               onPressed: () {
+                google.handleSignOut();
                 Navigator.pushNamed(context, '/login');
               },
             ),

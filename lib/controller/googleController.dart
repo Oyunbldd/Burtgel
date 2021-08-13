@@ -15,4 +15,6 @@ class GoogleController extends GetxController {
       print(err);
     }
   }
+
+  Future<dynamic> handleSignOut() => _googleSignIn.disconnect();
 }
