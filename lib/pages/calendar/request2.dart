@@ -17,14 +17,15 @@ class _RequestState extends State<Request> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        widget.selectC();
+        Navigator.pushNamed(context, '/request',
+            arguments: ["Гадуур ажиллах", widget.selectedDay]);
       },
       child: Container(
         height: 45,
         padding: EdgeInsets.symmetric(horizontal: 15),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [Text('Гадуур ажиллах '), Text('${widget.selectedDay}')],
+          children: [Text('Гадуур ажиллах '), Text('${widget.selectedDay}'),],
         ),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),

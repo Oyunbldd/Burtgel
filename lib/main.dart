@@ -4,12 +4,14 @@ import './pages/login.dart';
 import './pages/home.dart';
 import './screen/request.dart';
 
-void main() => runApp(GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      initialRoute: '/login',
-      routes: {
-        '/login': (context) => Login(),
-        '/home': (context) => Home(),
-        '/request': (contetxt) => SendRequest(),
-      },
-    ));
+void main() => runApp(
+      GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        initialRoute: '/login',
+        routes: {
+          '/login': (context) => Login(),
+          '/home': (context) => Home(),
+          '/request': (contetxt) => SendRequest(),
+        },
+      ),
+    );

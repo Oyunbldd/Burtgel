@@ -77,7 +77,13 @@ class _RequestDayState extends State<RequestDay> {
                         height: 35,
                         width: 90,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/request',
+                                arguments: [
+                                  "Чөлөө авах / Цагаар",
+                                  widget.selectedDay
+                                ]);
+                          },
                           child: Text(
                             'Цагаар',
                             style: TextStyle(color: Colors.black, fontSize: 12),
@@ -92,7 +98,13 @@ class _RequestDayState extends State<RequestDay> {
                         height: 35,
                         width: 90,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/request',
+                                arguments: [
+                                  "Чөлөө авах / Өдрөөр",
+                                  widget.selectedDay
+                                ]);
+                          },
                           child: Text(
                             'Өдрөөр',
                             style: TextStyle(color: Colors.black, fontSize: 12),
