@@ -50,7 +50,7 @@ class _RequestDayState extends State<RequestDay> {
           ),
           AnimatedContainer(
             duration: Duration(milliseconds: 900),
-            margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
+            margin: EdgeInsets.fromLTRB(0, 8, 0, 0),
             curve: widget.check == 'selectD'
                 ? Curves.easeInOut
                 : Curves.easeInSine,
@@ -60,22 +60,26 @@ class _RequestDayState extends State<RequestDay> {
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(color: Colors.white),
                 color: Colors.lightBlue),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+            child: ListView(
               children: [
-                Text(
-                  'Та чөлөө авах төрлөө сонгoно уу',
-                  style: TextStyle(color: Colors.white, fontSize: 15),
+                Container(
+                  alignment: Alignment.center,
+                  margin: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                  child: Text(
+                    'Та чөлөө авах төрлөө сонгoно уу',
+                    style: TextStyle(color: Colors.white, fontSize: 15),
+                  ),
                 ),
                 Container(
                   width: 200,
-                  margin: EdgeInsets.fromLTRB(0, 4, 0, 0),
+                  margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Container(
                         height: 35,
                         width: 90,
+                        alignment: Alignment.center,
                         child: TextButton(
                           onPressed: () {
                             Navigator.pushNamed(context, '/request',
