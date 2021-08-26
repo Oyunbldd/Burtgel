@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../pages/timeChoose.dart';
+import '../pages/checkbox.dart';
 
 class SendRequest extends StatefulWidget {
   @override
@@ -30,9 +31,9 @@ class _SendRequestState extends State<SendRequest> {
         body: Container(
           margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
           height: double.infinity,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               args[0] != 'Чөлөө авах / Өдрөөр'
                   ? Row(
@@ -54,9 +55,11 @@ class _SendRequestState extends State<SendRequest> {
                           width: 5,
                         ),
                         Text('хүртэл'),
+                      
                       ],
                     )
-                  : Text('data'),
+                  : Text('dqwdq'),
+                  TextButton(onPressed: (){}, child: Text('Click me pls'))
             ],
           ),
         ),

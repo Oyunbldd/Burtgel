@@ -22,7 +22,7 @@ class _checkboxState extends State<checkbox> {
     return Container(
       child: Column(
         children: [
-          text.map((e) => CheckboxListTile(value: _isChecked, onChanged: onChanged))
+          
         ],
       ),
     );
