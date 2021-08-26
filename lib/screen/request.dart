@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../pages/timeChoose.dart';
 
 class SendRequest extends StatefulWidget {
   @override
@@ -27,28 +28,35 @@ class _SendRequestState extends State<SendRequest> {
           elevation: 0,
         ),
         body: Container(
-          width: 350,
+          margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
           height: double.infinity,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('${args[1]}-ны '),
-              Container(
-                  width: 80,
-                  height: 60,
-                  child: TextFormField(
-                      controller: inputController,
-                      decoration: InputDecoration(
-                        hintText: "09:00",
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          borderSide: BorderSide(color: Colors.blue),
+              args[0] != 'Чөлөө авах / Өдрөөр'
+                  ? Row(
+                      children: [
+                        Text('${args[1]}-ны '),
+                        SizedBox(
+                          width: 5,
                         ),
-                        disabledBorder: InputBorder.none,
-                        focusedBorder: OutlineInputBorder(
-                          borderSide:
-                              const BorderSide(color: Colors.blue, width: 2.0),
+                        timeChoose(),
+                        SizedBox(
+                          width: 5,
                         ),
-                      ))),
+                        Text('цагаас '),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        timeChoose(),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Text('хүртэл'),
+                      ],
+                    )
+                  : Text('data'),
             ],
           ),
         ),

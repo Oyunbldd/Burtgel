@@ -8,7 +8,7 @@ class ApiController extends GetxController {
   var dio = Dio();
   final IdController id = Get.put(IdController());
   Future<dynamic> checkUser(data) async => dio.post(
-        "http://localhost:8001/api/v1/users/?gmail=${data.email}",
+        "http://192.168.1.88:8001/api/v1/users/?gmail=${data.email}",
         options: Options(
             headers: {HttpHeaders.contentTypeHeader: "application/json"}),
         data: {
@@ -22,5 +22,5 @@ class ApiController extends GetxController {
             id.increment(data),
           });
   Future<dynamic> getData() async =>
-      dio.get("http://localhost:8001/api/v1/user/${id.id}");
+      dio.get("http://192.168.1.88:8001/api/v1/user/${id.id}");
 }
