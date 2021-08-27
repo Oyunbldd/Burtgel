@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class CheckBoxInListview extends StatefulWidget {
+class CheckBoxInListview1 extends StatefulWidget {
   @override
-  _CheckBoxInListviewState createState() => _CheckBoxInListviewState();
+  _CheckBoxInListview1State createState() => _CheckBoxInListview1State();
 }
 
-class _CheckBoxInListviewState extends State<CheckBoxInListview> {
+class _CheckBoxInListview1State extends State<CheckBoxInListview1> {
   late String whichone = "";
   List<String> _texts = [
-    "Ар гэрийн гачигдал ",
-    "Эрүүл мэндийн шалтгаан ",
-    "Зайлшгүй шаардлага ",
+    "Tүгээлт",
+    "Суурилуулалт",
+    "Засвар",
     "Бусад",
   ];
   @override
@@ -22,10 +22,7 @@ class _CheckBoxInListviewState extends State<CheckBoxInListview> {
         children: _texts
             .map((text) => CheckboxListTile(
                   controlAffinity: ListTileControlAffinity.leading,
-                  title: Text(
-                    text,
-                    style: TextStyle(fontSize: 12),
-                  ),
+                  title: Text(text),
                   value: whichone == text ? true : false,
                   onChanged: (val) {
                     setState(() {

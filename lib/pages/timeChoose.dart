@@ -22,16 +22,17 @@ class _timeChooseState extends State<timeChoose> {
     }
 
     return Container(
-        width: 60,
-        child: RawMaterialButton(
-          fillColor: Colors.blue,
-          onPressed: () {
-            _openTimePicker(context);
-          },
-          child: Text(
-            _selectedTime,
-            style: TextStyle(color: Colors.white,fontSize: 15),
-          ),
-        ));
+      width: 60,
+      child: RawMaterialButton(
+        fillColor: Colors.blue,
+        onPressed: () {
+          _openTimePicker(context);
+        },
+        child: Text(
+          _selectedTime,
+          style: TextStyle(color: Colors.white, fontSize: 15),
+        ),
+      ),
+    );
   }
 }

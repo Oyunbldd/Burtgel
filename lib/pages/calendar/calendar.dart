@@ -98,7 +98,7 @@ class _CalendarState extends State<Calendar> {
           AnimatedContainer(
             height: count ? 200 : 0,
             width: 350,
-            duration: Duration(milliseconds: 900),
+            duration: Duration(milliseconds: 400),
             curve: !count ? Curves.easeInOut : Curves.easeInSine,
             child: Column(
               children: [
