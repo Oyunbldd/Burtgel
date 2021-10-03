@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import '../../pages/timeChoose.dart';
 import '../../pages/checkbox.dart';
-
+import '../../controller/apiController.dart';
+import 'package:get/get.dart';
 class Request1a extends StatefulWidget {
   final dynamic selectedDay;
+
   Request1a({required this.selectedDay});
 
   @override
@@ -12,6 +14,15 @@ class Request1a extends StatefulWidget {
 
 class _Request1aState extends State<Request1a> {
   final inputController = TextEditingController();
+  final ApiController apiController = Get.put(ApiController());
+  late String whichone = "";
+  List<String> _texts = [
+    "Ар гэрийн гачигдал ",
+    "Эрүүл мэндийн шалтгаан ",
+    "Зайлшгүй шаардлага ",
+    "Бусад",
+  ];
+ List<String> data=[];
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +51,29 @@ class _Request1aState extends State<Request1a> {
               Text('хүртэл'),
             ],
           ),
-          CheckBoxInListview(),
+          Container(
+            height: 250,
+            child: ListView(
+              padding: EdgeInsets.all(5.0),
+              children: _texts
+                  .map((text) => CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.platform,
+                        // controlAffinity: ListTileControlAffinity.leading,
+                        title: Text(
+                          text,
+                          style: TextStyle(fontSize: 12),
+                        ),
+                        value: whichone == text ? true : false,
+                        onChanged: (val) {
+                          setState(() {
+                            whichone == text ? whichone = "" : whichone = text;
+                            print(whichone);
+                          });
+                        },
+                      ))
+                  .toList(),
+            ),
+          ),
           TextFormField(
             controller: inputController,
             decoration: InputDecoration(
@@ -57,7 +90,11 @@ class _Request1aState extends State<Request1a> {
               ),
             ),
           ),
-          TextButton(onPressed: () {}, child: Text('Click me'))
+          TextButton(onPressed: () {
+            data.addAll([whichone,inputController.text,widget.selectedDay]);
+            apiController.request(data);
+            Navigator.pushNamed(context, '/home');
+          }, child: Text('Click me'))
         ],
       ),
     );

@@ -18,10 +18,11 @@ class _CheckBoxInListviewState extends State<CheckBoxInListview> {
     return Container(
       height: 250,
       child: ListView(
-        padding: EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(5.0),
         children: _texts
             .map((text) => CheckboxListTile(
-                  controlAffinity: ListTileControlAffinity.leading,
+           controlAffinity: ListTileControlAffinity.platform,
+                  // controlAffinity: ListTileControlAffinity.leading,
                   title: Text(
                     text,
                     style: TextStyle(fontSize: 12),
@@ -30,6 +31,7 @@ class _CheckBoxInListviewState extends State<CheckBoxInListview> {
                   onChanged: (val) {
                     setState(() {
                       whichone == text ? whichone = "" : whichone = text;
+                      print(whichone);
                     });
                   },
                 ))

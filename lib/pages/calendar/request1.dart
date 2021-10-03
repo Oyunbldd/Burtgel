@@ -41,9 +41,11 @@ class _RequestDayState extends State<RequestDay> {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
-                      color: widget.check != 'selectC'
-                          ? Colors.blueAccent
-                          : Colors.white),
+                    color: widget.check != 'selectC'
+                        ? Colors.blueAccent
+                        : Colors.white,
+                        width: 2,
+                  ),
                   color:
                       widget.check != "selectC" ? Colors.white : Colors.grey),
             ),

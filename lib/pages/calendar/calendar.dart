@@ -17,6 +17,7 @@ class _CalendarState extends State<Calendar> {
   String whichSelect = "";
   bool count = false;
   double _height = 180;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,18 +27,19 @@ class _CalendarState extends State<Calendar> {
           AnimatedContainer(
             height: count ? 0 : 20,
             width: 350,
-            duration: Duration(milliseconds: 900),
+            duration: Duration(milliseconds: 800),
             curve: !count ? Curves.easeInOut : Curves.easeInSine,
             alignment: Alignment.topLeft,
             child: Row(
               children: [
                 Container(
-                    height: 10,
-                    width: 10,
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      shape: BoxShape.circle,
-                    )),
+                  height: 10,
+                  width: 10,
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    shape: BoxShape.circle,
+                  ),
+                ),
                 SizedBox(
                   width: 5,
                 ),
@@ -75,8 +77,8 @@ class _CalendarState extends State<Calendar> {
                 todayDecoration: BoxDecoration(
                   color: Colors.white,
                 ),
-                todayTextStyle: TextStyle(color: Colors.black),
-                weekendTextStyle: TextStyle(color: Colors.orangeAccent),
+                todayTextStyle: TextStyle(color: Colors.blueGrey),
+                weekendTextStyle: TextStyle(color: Colors.grey),
                 selectedTextStyle:
                     TextStyle(color: !count ? Colors.black : Colors.white),
               ),
@@ -96,6 +98,7 @@ class _CalendarState extends State<Calendar> {
           //   child: Text('alert popup'),
           // )
           AnimatedContainer(
+            margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
             height: count ? 200 : 0,
             width: 350,
             duration: Duration(milliseconds: 400),

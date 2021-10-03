@@ -25,14 +25,18 @@ class _RequestState extends State<Request> {
         padding: EdgeInsets.symmetric(horizontal: 15),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [Text('Гадуур ажиллах '), Text('${widget.selectedDay}'),],
+          children: [
+            Text('Гадуур ажиллах '),
+            Text('${widget.selectedDay}'),
+          ],
         ),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             border: Border.all(
-                color: widget.check != 'selectD'
-                    ? Colors.blueAccent
-                    : Colors.white),
+              color:
+                  widget.check != 'selectD' ? Colors.blueAccent : Colors.white,
+              width: 2,
+            ),
             color: widget.check != 'selectD' ? Colors.white : Colors.grey),
       ),
     );
