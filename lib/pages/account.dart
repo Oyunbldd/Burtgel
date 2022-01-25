@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hexcolor/hexcolor.dart';
 import '../controller/idController.dart';
 import '../controller/apiController.dart';
 import '../controller/googleController.dart';
@@ -37,7 +36,7 @@ class _AccountState extends State<Account> {
                 style: TextStyle(fontSize: 15.0),
               ),
               style: ElevatedButton.styleFrom(
-                primary: HexColor('#C4C4C4'),
+                primary: Colors.redAccent,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0)),
               ),

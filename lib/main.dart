@@ -3,10 +3,13 @@ import 'package:get/get.dart';
 import './pages/login.dart';
 import './pages/home.dart';
 import 'screen/request/request.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() => runApp(
       GetMaterialApp(
         debugShowCheckedModeBanner: false,
+        localizationsDelegates: GlobalMaterialLocalizations.delegates,
+        supportedLocales: [const Locale('mn', 'MN')],
         initialRoute: '/login',
         routes: {
           '/login': (context) => Login(),

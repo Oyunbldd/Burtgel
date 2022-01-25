@@ -54,7 +54,49 @@ class _CalendarState extends State<Calendar> {
 
           Container(
             width: 350.0,
+            margin: EdgeInsets.only(top: 10),
+            decoration: BoxDecoration(
+                border: Border.all(width: 2, color: Colors.white),
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.white),
             child: TableCalendar(
+              locale: 'mn_MN',
+              headerStyle: HeaderStyle(
+                formatButtonVisible: false,
+                decoration: BoxDecoration(
+                  color: Color(0xFFFC5376),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20),
+                  ),
+                ),
+                titleCentered: true,
+                titleTextStyle: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+                leftChevronIcon: Icon(
+                  Icons.chevron_left,
+                  color: Colors.white,
+                ),
+                rightChevronIcon: Icon(
+                  Icons.chevron_right,
+                  color: Colors.white,
+                ),
+              ),
+              daysOfWeekHeight: 35,
+              daysOfWeekStyle: DaysOfWeekStyle(
+                weekdayStyle: TextStyle(
+                    fontSize: 14.0,
+                    height: 2,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.grey),
+                weekendStyle: TextStyle(
+                    fontSize: 14.0,
+                    height: 2,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.grey),
+              ),
               focusedDay: focusedDay,
               firstDay: DateTime(2021),
               lastDay: DateTime(2023),
@@ -71,22 +113,26 @@ class _CalendarState extends State<Calendar> {
               calendarStyle: CalendarStyle(
                 isTodayHighlighted: true,
                 selectedDecoration: BoxDecoration(
-                  color: !count ? Colors.white : Colors.blue,
+                  color: Colors.grey,
                   shape: BoxShape.circle,
                 ),
-                todayDecoration: BoxDecoration(
+                outsideDecoration: BoxDecoration(
                   color: Colors.white,
+                  shape: BoxShape.circle,
+                  border: Border.all(color: Colors.blueGrey),
                 ),
-                todayTextStyle: TextStyle(color: Colors.blueGrey),
+                defaultDecoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.circle,
+                  border: Border.all(color: Colors.blueGrey),
+                ),
+                weekendDecoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.circle,
+                  border: Border.all(color: Colors.blueGrey),
+                ),
                 weekendTextStyle: TextStyle(color: Colors.grey),
-                selectedTextStyle:
-                    TextStyle(color: !count ? Colors.black : Colors.white),
-              ),
-              headerStyle: HeaderStyle(
-                formatButtonVisible: false,
-                titleCentered: true,
-                leftChevronPadding: EdgeInsets.fromLTRB(0, 12, 0, 12),
-                rightChevronPadding: EdgeInsets.fromLTRB(0, 12, 0, 12),
+                selectedTextStyle: TextStyle(color: Colors.black),
               ),
               selectedDayPredicate: (DateTime date) {
                 return isSameDay(selectedDay, date);

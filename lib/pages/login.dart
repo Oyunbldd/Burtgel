@@ -1,9 +1,10 @@
+// ignore: unused_import
+// ignore_for_file: unused_import
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hexcolor/hexcolor.dart';
-
 import '../controller/idController.dart';
 import '../controller/googleController.dart';
 import '../controller/apiController.dart';
@@ -38,7 +39,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: HexColor('#083985'),
+      backgroundColor: Colors.blueGrey,
       body: Container(
         width: double.infinity,
         child: Column(

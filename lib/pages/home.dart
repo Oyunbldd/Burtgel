@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
 import './account.dart';
 import 'calendar/calendar.dart';
 import './history.dart';
@@ -27,7 +26,7 @@ class _HomeState extends State<Home> {
         ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
-          selectedItemColor: HexColor('#39A2DB'),
+          selectedItemColor: Colors.blueAccent,
           unselectedItemColor: Colors.grey,
           selectedFontSize: 10.0,
           unselectedFontSize: 0.0,
