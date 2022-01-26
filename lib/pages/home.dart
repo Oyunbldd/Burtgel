@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import './account.dart';
-import 'calendar/calendar.dart';
+import 'calendar.dart';
 import './history.dart';
 import './notification.dart';
 
@@ -13,7 +13,6 @@ class _HomeState extends State<Home> {
   int _currentIndex = 0;
   List<dynamic> _pages = [
     Calendar(),
-    NotificationPage(),
     History(),
     Account(),
   ];
@@ -21,6 +20,25 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          leading: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Image.asset(
+              'assets/callpro_logo.png',
+            ),
+          ),
+          leadingWidth: 300,
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.notifications,
+                color: Color(0xFF0C0C54),
+              ),
+            )
+          ],
+        ),
         body: Center(
           child: _pages.elementAt(_currentIndex),
         ),
@@ -40,20 +58,24 @@ class _HomeState extends State<Home> {
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              title: Text('Нүүр'),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.notifications_none),
-              title: Text('Мэдэгдэл'),
-              activeIcon: Icon(Icons.notifications),
+              title: Text(
+                'Нүүр',
+                style: TextStyle(fontSize: 12),
+              ),
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.history),
-              title: Text('Түүх'),
+              title: Text(
+                'Түүх',
+                style: TextStyle(fontSize: 12),
+              ),
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.account_circle_outlined),
-              title: Text('Профайл'),
+              title: Text(
+                'Профайл',
+                style: TextStyle(fontSize: 12),
+              ),
               activeIcon: Icon(Icons.account_circle),
             ),
           ],

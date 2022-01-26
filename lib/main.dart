@@ -10,7 +10,7 @@ void main() => runApp(
         debugShowCheckedModeBanner: false,
         localizationsDelegates: GlobalMaterialLocalizations.delegates,
         supportedLocales: [const Locale('mn', 'MN')],
-        initialRoute: '/login',
+        initialRoute: '/home',
         routes: {
           '/login': (context) => Login(),
           '/home': (context) => Home(),
